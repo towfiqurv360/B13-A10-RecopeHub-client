@@ -35,9 +35,13 @@ export const AuthProvider = ({ children }) => {
         const res = await axiosSecure.get("/auth/me");
         setUser(res.data.user);
         localStorage.setItem("user", JSON.stringify(res.data.user));
+        
+        document.cookie = "is_auth=true; path=/; max-age=604800"; // 7 days
       } catch {
         localStorage.removeItem("user");
         setUser(null);
+        
+        document.cookie = "is_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
       } finally {
         setLoading(false);
       }
@@ -48,6 +52,8 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));
+    
+    document.cookie = "is_auth=true; path=/; max-age=604800"; 
   };
 
   const updateUserProfile = (updatedData) => {
@@ -62,6 +68,8 @@ export const AuthProvider = ({ children }) => {
     try { await axiosSecure.post("/auth/logout"); } catch {}
     setUser(null);
     localStorage.removeItem("user");
+    
+    document.cookie = "is_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     toast.success("Logged out successfully");
     router.push("/login");
   };

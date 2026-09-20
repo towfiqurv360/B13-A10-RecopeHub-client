@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
-  const token = request.cookies.get('token')?.value;
+  const isAuth = request.cookies.get('is_auth')?.value;
   const { pathname } = request.nextUrl;
 
   if (pathname.startsWith('/dashboard')) {
-    if (!token) {
+    if (!isAuth) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
   }
