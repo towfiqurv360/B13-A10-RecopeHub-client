@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const liveServerUrl = "https://b13-assignment-10-server-site.onrender.com/api";
+const liveServerUrl = "https://b13-a10-recopehub-server.onrender.com/api";
 const localServerUrl = "http://localhost:5000/api";
 
 const getBaseUrl = () => {
