@@ -36,7 +36,8 @@ export default function LoginPage() {
 
         toast.success("Login successful!");
         
-        window.location.href = "/dashboard";
+        
+        router.push("/dashboard");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Invalid email or password");
@@ -108,7 +109,6 @@ export default function LoginPage() {
                 <FiLock className="text-lg" />
               </div>
               <input
-                
                 type={showPassword ? "text" : "password"}
                 required 
                 placeholder="Password"
