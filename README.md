@@ -7,10 +7,6 @@
 
 ---
 
-## ⚠️ Important Note for Evaluators (Cross-Origin Cookie Policy)
-> **Live Environment Constraints:** The frontend is deployed on **Vercel** and the backend on **Render**. Due to strict browser security policies (ITP) regarding third-party cookies, cross-origin HTTP-only authentication cookies (`sameSite: 'none'`) may be aggressively blocked by modern browsers (especially Chrome, Incognito modes, and Mobile). This can occasionally result in `401 Unauthorized` errors or redirect loops on protected routes in the live deployment.
-> 
-
 ---
 
 ## 🌐 Live Project & Repositories
@@ -79,5 +75,5 @@ The application utilizes a highly optimized NoSQL structure with the following c
 
 **1. Clone the Repositories:**
 ```bash
-git clone [(https://github.com/towfiqurv360/B13-A10-RecopeHub-client.git)]
-git clone [(https://github.com/towfiqurv360/B13-A10-RecopeHub-server.git)]
+git clone https://github.com/towfiqurv360/B13-A10-RecopeHub-client.git
+git clone https://github.com/towfiqurv360/B13-A10-RecopeHub-server.git
